@@ -53,15 +53,6 @@ class LoadingSpinnerOverlay extends Component {
         modal: true,
     }
 
-    LoadingSpinnerOverlay.propTypes = {
-        overlayStyle: ViewPropTypes.style,
-        style: ViewPropTypes.style,
-        duration: PropTypes.number,
-        delay: PropTypes.number,
-        marginTop: PropTypes.number,
-        modal: PropTypes.bool,
-    }
-
     constructor(props) {
         super(props)
         this.state = {
@@ -224,6 +215,15 @@ class LoadingSpinnerOverlay extends Component {
         )
     }
 
+}
+
+LoadingSpinnerOverlay.propTypes = {
+    overlayStyle: ViewPropTypes.style,
+    style: ViewPropTypes.style,
+    duration: PropTypes.number,
+    delay: PropTypes.number,
+    marginTop: PropTypes.number,
+    modal: PropTypes.bool,
 }
 
 export default TimerEnhance(LoadingSpinnerOverlay)
