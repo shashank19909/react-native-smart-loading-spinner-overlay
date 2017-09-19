@@ -7,7 +7,6 @@
 
 import React, {
     Component,
-    PropTypes,
 } from 'react'
 import {
     View,
@@ -19,9 +18,12 @@ import {
     ActivityIndicator,
     ActivityIndicatorIOS,
     ProgressBarAndroid,
+    ViewPropTypes
 } from 'react-native'
 
-import TimerEnhance from 'react-native-smart-timer-enhance'
+import TimerEnhance from 'react-native-smart-timer-enhance';
+import PropTypes from 'prop-types';
+
 
 const styles = StyleSheet.create({
     overlay: {
@@ -51,9 +53,9 @@ class LoadingSpinnerOverlay extends Component {
         modal: true,
     }
 
-    static propTypes = {
-        overlayStyle: View.propTypes.style,
-        style: View.propTypes.style,
+    LoadingSpinnerOverlay.propTypes = {
+        overlayStyle: ViewPropTypes.style,
+        style: ViewPropTypes.style,
         duration: PropTypes.number,
         delay: PropTypes.number,
         marginTop: PropTypes.number,
@@ -80,7 +82,7 @@ class LoadingSpinnerOverlay extends Component {
         let loadingSpinner = this._renderLoadingSpinner()
         return this._renderOverLay(loadingSpinner)
     }
-    
+
     _renderOverLay(loadingSpinner) {
         let {width: deviceWidth, height: deviceHeight,} = Dimensions.get('window')
         return (
@@ -97,7 +99,7 @@ class LoadingSpinnerOverlay extends Component {
                 : loadingSpinner
         )
     }
-    
+
     _renderLoadingSpinner() {
         let children
         if(this.state.children == null) {
